@@ -1,0 +1,17 @@
+
+.seccion-gif{
+    background-color: rgb(78, 14, 121);
+
+    & h2{
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
+}
+
+.seccion-gif__contenedor{
+    display: flex;
+    flex-wrap: wrap;  /* Permite que los elementos se ajusten a múltiples líneas */
+    justify-content: center;
+    gap: 20px;
+}

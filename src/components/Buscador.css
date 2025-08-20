@@ -1,0 +1,23 @@
+
+h1{
+    padding: 20px;
+    background-color: rgb(255, 122, 13);
+    font-size: 3rem;
+    margin: 2rem;
+    text-align: center;
+    border-radius: 30px;
+    color: white;
+}
+
+input{
+    width: 95%;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+
+}
