@@ -6,7 +6,10 @@ import { llamadaApi } from '../utils/llamadaApi';
 
 export const SeccionGif = ({busqueda}) => {
 
+    const [offset, setOffset] = useState(0);
     const [gifs, setGifs] = useState([]);
+
+    const limite =10;
 
     const eliminarGifs = (id) =>{
         const nuevosGifs = gifs.filter(gif => gif.id !== id)
@@ -14,9 +17,19 @@ export const SeccionGif = ({busqueda}) => {
         console.log(`Gif con id ${id} a sido eliminado`);
     }
 
+    const cargarMasGifs = async () => {
+
+        const nuevoOffset = offset + limite; 
+        const nuevosGifs = await llamadaApi(limite, busqueda, nuevoOffset); 
+        setGifs([...gifs, ...nuevosGifs]); 
+        setOffset(nuevoOffset);
+    }
+
+
+
     useEffect(() =>{
         const obtenerGifs = async () => {
-            const resultado = await llamadaApi(6, busqueda); 
+            const resultado = await llamadaApi(limite, busqueda); 
             setGifs(resultado || []); // Prevención si hay error
         };
         obtenerGifs();
@@ -38,6 +51,10 @@ export const SeccionGif = ({busqueda}) => {
 
                 
             </div>
+
+            <button 
+            onClick={cargarMasGifs}>
+                Buscar más</button>
             
         </section>
     );
