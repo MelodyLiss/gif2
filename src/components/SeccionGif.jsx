@@ -4,40 +4,37 @@ import { TarjetaGif } from './TarjetaGif';
 import { llamadaApi } from '../utils/llamadaApi';
 
 
-export const SeccionGif = ({busqueda}) => {
+export const SeccionGif = ({busqueda,gifs,offset,actualizarGifs,actualizarOffset}) => {
 
-    const [offset, setOffset] = useState(0);
-    const [gifs, setGifs] = useState([]);
-
-    const limite =10;
+    const limite =3;
 
     const eliminarGifs = (id) =>{
         const nuevosGifs = gifs.filter(gif => gif.id !== id)
-        setGifs(nuevosGifs);
+        actualizarGifs(busqueda,nuevosGifs);
         console.log(`Gif con id ${id} a sido eliminado`);
     }
 
     const cargarMasGifs = async () => {
-
         const nuevoOffset = offset + limite; 
-        const nuevosGifs = await llamadaApi(limite, busqueda, nuevoOffset); 
-        setGifs([...gifs, ...nuevosGifs]); 
-        setOffset(nuevoOffset);
+        actualizarOffset(busqueda,nuevoOffset);
+        const nuevos = await llamadaApi(limite, busqueda, nuevoOffset);
+        actualizarGifs(busqueda,[...gifs, ...nuevos]);
     }
 
 
 
     useEffect(() =>{
         const obtenerGifs = async () => {
+            actualizarOffset(busqueda,0);
             const resultado = await llamadaApi(limite, busqueda); 
-            setGifs(resultado || []); // Prevención si hay error
+            actualizarGifs(busqueda, resultado || []); // Prevención si hay error
         };
         obtenerGifs();
     },[busqueda])
 
     return (
         <section className="seccion-gif">
-            <h2>Resultados de la búsqueda</h2>
+            <h2>Resultados de la búsqueda de {busqueda}</h2>
             <div className="seccion-gif__contenedor">
 
                 {gifs.map(gif =>(
@@ -48,8 +45,6 @@ export const SeccionGif = ({busqueda}) => {
                     eliminarGifs={() => eliminarGifs(gif.id)}
                     />
                 ))}
-
-                
             </div>
 
             <button 

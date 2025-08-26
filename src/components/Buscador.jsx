@@ -3,9 +3,19 @@ import { useState } from 'react'
 import './buscador.css'
 
 
-export const Buscador = ({ setBusqueda }) => {
+export const Buscador = ({ setBusqueda,agregarCategoria }) => {
 
     const [valorTemporal, setValorTemporal] = useState('')
+
+    const manejarBusqueda = () => {
+        if (valorTemporal.trim()){
+            setBusqueda(valorTemporal)
+            agregarCategoria(valorTemporal)
+            setValorTemporal('')   
+            console.log(valorTemporal);
+                     
+        }
+    }
 
     return (
         <input type="text"
@@ -13,8 +23,8 @@ export const Buscador = ({ setBusqueda }) => {
             value={valorTemporal}
             onChange={(e) => setValorTemporal(e.target.value)}
             onKeyDown={(e) => {
-                if (e.key === 'Enter' && valorTemporal.trim() !== '') {
-                    setBusqueda(valorTemporal)
+                if (e.key === 'Enter') {
+                    manejarBusqueda();
                 }
             }}
         />
