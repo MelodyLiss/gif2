@@ -13,7 +13,7 @@ export const Buscador = ({ setBusqueda,agregarCategoria }) => {
             agregarCategoria(valorTemporal)
             setValorTemporal('')   
             console.log(valorTemporal);
-                     
+
         }
     }
 

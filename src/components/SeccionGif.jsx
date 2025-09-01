@@ -34,7 +34,9 @@ export const SeccionGif = ({busqueda,gifs,offset,actualizarGifs,actualizarOffset
 
     return (
         <section className="seccion-gif">
-            <h2>Resultados de la búsqueda de {busqueda}</h2>
+            <div className='nombre__categoria'>
+                <h2>Los mejores gifs de <span>"{busqueda}"</span></h2>
+            </div>
             <div className="seccion-gif__contenedor">
 
                 {gifs.map(gif =>(
@@ -47,7 +49,7 @@ export const SeccionGif = ({busqueda,gifs,offset,actualizarGifs,actualizarOffset
                 ))}
             </div>
 
-            <button 
+            <button className='seccion-gif__boton'
             onClick={cargarMasGifs}>
                 Buscar más</button>
             

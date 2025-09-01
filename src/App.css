@@ -21,6 +21,11 @@ html {
     flex: 1;
     display: flex;
     flex-direction: column;
+    background-color: #f4f4ff;
+opacity: 1;
+background-image:  linear-gradient(#e96e21 0.8px, transparent 0.8px), linear-gradient(90deg, #e96e21 0.8px, transparent 0.8px), linear-gradient(#e96e21 0.4px, transparent 0.4px), linear-gradient(90deg, #e96e21 0.4px, #f4f4ff 0.4px);
+background-size: 20px 20px, 20px 20px, 4px 4px, 4px 4px;
+background-position: -0.8px -0.8px, -0.8px -0.8px, -0.4px -0.4px, -0.4px -0.4px;
 }
 
 body {
@@ -38,10 +43,6 @@ main {
     margin: 0 auto;
     width: 100%;
 
-    background-color: #4a197e;
-    opacity: 0.8;
-    background-size: 20px 20px;
-    background-image: repeating-linear-gradient(to right, #c77e00, #c77e00 1px, #4a197e 1px, #4a197e);
 }
 
 footer {
@@ -52,6 +53,8 @@ footer {
     margin-top: auto;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     background-color: rgb(255, 122, 13);
+    color: white;
+    font-weight: bold;
 
     p {
         margin: 0;

@@ -1,11 +1,44 @@
 
 .seccion-gif{
-    background-color: rgb(78, 14, 121);
+    background-color: rgb(245, 177, 168);
+    padding-bottom: 2rem;
+    margin: 2rem;
+    border-radius: 15px;
+    
 
-    & h2{
-        padding: 20px;
-        color: white;
-        text-align: center;
+    & .nombre__categoria {
+        
+            background-color: rgb(240, 136, 136);
+            color: rgb(245, 239, 239);
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+
+        & span{
+            color: rgb(201, 27, 99);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+
+    
+
+    & .seccion-gif__boton {
+        background-color: white;
+        color: rgb(78, 14, 121);
+        border: none;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 1rem;
+
+       
+
+        &:hover {
+            background-color: rgb(255, 122, 13);
+            color: white;
+        }
     }
 }
 

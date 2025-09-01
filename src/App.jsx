@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import './App.css'
 import { Buscador } from './components/Buscador'
 import { SeccionGif } from './components/SeccionGif'
-import { SiEsotericsoftware } from 'react-icons/si'
 
 function App() {
 
   const [busqueda, setBusqueda] = useState('')
   const [categorias, setCategorias] = useState({})
   console.log(busqueda);
-  console.log(categorias);
+  console.log("estas son mis",categorias);
+
 
   const agregarCategoria = (nuevaBusqueda) =>{
 
