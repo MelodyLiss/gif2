@@ -43,6 +43,15 @@ function App() {
     }));
   }
 
+  const eliminarCategoria = (categoria) =>{
+
+    setCategorias( prev => {
+      const copia = {...prev}
+      delete copia[categoria]
+      return copia 
+    })
+    
+    }
 
 
   return (
@@ -65,6 +74,7 @@ function App() {
             offset={categorias[categoria].offset}
             actualizarGifs={actualizarGifsCategoria}
             actualizarOffset={actualizarOffsetCategoria}
+            eliminarCategoria={eliminarCategoria}
           />
         ))}
 

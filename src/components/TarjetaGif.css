@@ -28,4 +28,19 @@
         height: 200px;
         object-fit: cover;
     }
+
+    & button {
+    background-color: rgb(233, 204, 151);
+    border: none;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 50%;
+    color: rgb(78, 14, 121);
+
+    &:hover {
+        background-color: rgb(201, 168, 106);
+        color: whitesmoke;
+    }
+
+    }
 }

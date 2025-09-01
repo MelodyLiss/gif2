@@ -1,28 +1,10 @@
-
-.seccion-gif{
+.seccion-gif {
     background-color: rgb(245, 177, 168);
     padding-bottom: 2rem;
     margin: 2rem;
     border-radius: 15px;
-    
-
-    & .nombre__categoria {
-        
-            background-color: rgb(240, 136, 136);
-            color: rgb(245, 239, 239);
-            margin-bottom: 1rem;
-            padding: 1rem;
-        }
-
-        & span{
-            color: rgb(201, 27, 99);
-            text-transform: uppercase;
-            font-weight: bold;
-            font-style: italic;
-        }
 
 
-    
 
     & .seccion-gif__boton {
         background-color: white;
@@ -33,7 +15,7 @@
         cursor: pointer;
         margin-top: 1rem;
 
-       
+
 
         &:hover {
             background-color: rgb(255, 122, 13);
@@ -42,9 +24,50 @@
     }
 }
 
-.seccion-gif__contenedor{
+.seccion-gif__contenedor {
     display: flex;
-    flex-wrap: wrap;  /* Permite que los elementos se ajusten a múltiples líneas */
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten a múltiples líneas */
     justify-content: center;
     gap: 20px;
 }
+
+& .nombre__categoria {
+
+    background-color: rgb(240, 136, 136);
+    color: rgb(245, 239, 239);
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    & button {
+    background-color: rgb(214, 91, 91);
+    border: none;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 50%;
+    color: rgb(61, 60, 60);
+
+    &:hover {
+        background-color: rgb(201, 27, 99);
+        color: white;
+    }
+}
+}
+
+& h2 {
+    width: 90%;
+    text-align: center;
+}
+
+& span {
+    color: rgb(201, 27, 99);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+}
+

@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import './SeccionGif.css';
 import { TarjetaGif } from './TarjetaGif';
 import { llamadaApi } from '../utils/llamadaApi';
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 
-export const SeccionGif = ({busqueda,gifs,offset,actualizarGifs,actualizarOffset}) => {
+export const SeccionGif = ({busqueda,gifs,offset,actualizarGifs,actualizarOffset,eliminarCategoria}) => {
 
     const limite =3;
 
@@ -36,6 +37,7 @@ export const SeccionGif = ({busqueda,gifs,offset,actualizarGifs,actualizarOffset
         <section className="seccion-gif">
             <div className='nombre__categoria'>
                 <h2>Los mejores gifs de <span>"{busqueda}"</span></h2>
+                <button onClick={()=> eliminarCategoria(busqueda)} ><RiDeleteBin5Fill/></button>
             </div>
             <div className="seccion-gif__contenedor">
 
